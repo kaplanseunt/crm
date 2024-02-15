@@ -1,0 +1,28 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Header Example</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+
+    <header>
+        <h1 id="main-title">Welcome to My Website</h1>
+        <button id="change-title-btn">Change Title</button>
+    </header>
+    <h1>Country Lists</h1>
+    <ul>
+        {% for country in countries %}
+            <li>{{ country.name }} - {{ country.sortname }} - {{ country.phonecode }}</li>
+        {% endfor %}
+    </ul>
+
+    <script src="{% static 'js/script.js' %}" defer></script>
+</body>
+</html>
